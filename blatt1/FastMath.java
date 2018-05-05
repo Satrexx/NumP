@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * @author Christoph Riesinger (riesinge@in.tum.de)
  * @author Jürgen Bräckle (braeckle@in.tum.de)
@@ -19,7 +21,7 @@ public class FastMath {
 	 * In literature, several of those constants for floats or doubles can be
 	 * found. There's no optimal constant for all cases.
 	 */
-	private static int MAGIC_NUMBER = 1024;
+	private static int MAGIC_NUMBER = 1335;
 
 	/**
 	 * belegt die MAGIC_NUMBER mit dem Wert magic
@@ -46,8 +48,15 @@ public class FastMath {
 	public static Gleitpunktzahl invSqrt(Gleitpunktzahl x) {
 
 		/* TODO: hier den "fast inverse square root" Algorithmus implementieren */
-		return new Gleitpunktzahl();
+
+		int zahl = gleitpunktzahlToIEEE(x);
+		zahl = zahl >> 1;
+		zahl = MAGIC_NUMBER - zahl;
+		Gleitpunktzahl newZahl = iEEEToGleitpunktzahl(zahl);
+
+		return newZahl;
 	}
+
 
 	/**
 	 * Calculates the absolute error between the result of the fast inverse
@@ -134,4 +143,5 @@ public class FastMath {
 
 		return g;
 	}
+
 }
