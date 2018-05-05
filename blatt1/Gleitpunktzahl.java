@@ -403,6 +403,10 @@ public class Gleitpunktzahl {
             }
             return new Gleitpunktzahl(this);
         }
+        if(this.isInfinite() && ! r.isInfinite())
+            return new Gleitpunktzahl(this);
+        if(r.isInfinite() && !this.isInfinite())
+            return new Gleitpunktzahl(r);
 
         if (Math.abs(this.exponent - r.exponent) > 32 - sizeMantisse) {  //Größenunterschied zu immens
             return this.exponent > r.exponent ? new Gleitpunktzahl(this) : new Gleitpunktzahl(r);
