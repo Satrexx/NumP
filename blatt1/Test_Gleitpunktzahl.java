@@ -143,6 +143,8 @@ public class Test_Gleitpunktzahl {
 			// Berechnung mit der Methode des Studenten durchfuehren
 			gleiterg = x.sub(y);
 
+            System.out.println("Seppi stinkt");
+
 			// Test, ob Ergebnis korrekt
 			if (gleiterg.compareAbsTo(gleitref) != 0
 					|| gleiterg.vorzeichen != gleitref.vorzeichen) {
