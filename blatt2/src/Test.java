@@ -42,11 +42,13 @@ public class Test {
         Complex[] c = dft.DFT.dft(v);
         Complex[] v2 = dft.IFFT.ifft(c);
 
+        //System.out.println(new Complex(5.0,3.0).sub(new Complex(4.0,4.0)));
+        //System.out.println(Complex.fromPolar(5,(1/2)*Math.PI));
+
         for (int i = 0; i < 4; i++) {
             System.out.println(v2[i]);
         }
-        System.out
-                .println("Richtig waeren gerundet: Eigene Beispiele ueberlegen");
+        System.out.println("Richtig waeren gerundet: Eigene Beispiele ueberlegen");
 
         System.out.println("*************************************\n");
     }

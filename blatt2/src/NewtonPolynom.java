@@ -89,10 +89,11 @@ public class NewtonPolynom implements InterpolationMethod {
         this.f = new double[y.length];
         this.a = new double[y.length];
 
-        int n = y.length - 1;                           //////IDK GDFGDZZDTTDETDTEE
         for(int iter = 0;iter< y.length;iter++)
             f[iter] = y[iter];
         a[0] = y[0];
+
+        int n = y.length - 1;                           //////IDK GDFGDZZDTTDETDTEE
         int spalte = 1;
         while(n != 1){
             for(int i = 0;i<n;i++){
@@ -102,7 +103,7 @@ public class NewtonPolynom implements InterpolationMethod {
             spalte++;
             n--;
         }
-
+        //f[0] = (f[1] - f[0])/(x[spalte] - x[0]);
     }
 
     /**

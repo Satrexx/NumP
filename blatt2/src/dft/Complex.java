@@ -6,9 +6,13 @@ package dft;
  * @author Sebastian Rettenberger
  */
 public class Complex {
-    /** Realteil der Zahl */
+    /**
+     * Realteil der Zahl
+     */
     private double real;
-    /** Imaginaerteil der Zahl */
+    /**
+     * Imaginaerteil der Zahl
+     */
     private double imaginary;
 
     public Complex() {
@@ -31,7 +35,9 @@ public class Complex {
      */
     public Complex add(Complex other) {
         // TODO: diese Methode ist zu implementieren
-        return null;
+        double newReal = other.getReal() + this.getReal();
+        double newImaginary = this.getImaginaer() + other.getImaginaer();
+        return new Complex(newReal, newImaginary);
     }
 
     /**
@@ -41,7 +47,9 @@ public class Complex {
      */
     public Complex sub(Complex other) {
         // TODO: diese Methode ist zu implementieren
-        return null;
+        double newReal = this.getReal() - other.getReal();
+        double newImaginary = this.getImaginaer() - other.getImaginaer();
+        return new Complex(newReal, newImaginary);
     }
 
     /**
@@ -51,7 +59,12 @@ public class Complex {
      */
     public Complex mul(Complex other) {
         // TODO: diese Methode ist zu implementieren
-        return null;
+        double newReal;
+        double newImaginary;
+        newReal = this.getReal() * other.getReal();
+        newReal = newReal - (this.getImaginaer() * other.getImaginaer());
+        newImaginary = (this.getReal() * other.getImaginaer()) + (this.getImaginaer() * other.getReal());
+        return new Complex(newReal, newImaginary);
     }
 
     /**
@@ -123,7 +136,8 @@ public class Complex {
      * Winkel phi.
      */
     public static Complex fromPolar(double r, double phi) {
-        // TODO: diese Methode ist zu implementieren
-        return null;
+        double newReal = r * (Math.cos(phi));
+        double newImaginary = r * (Math.sin(phi));
+        return new Complex(newReal,newImaginary);
     }
 }
