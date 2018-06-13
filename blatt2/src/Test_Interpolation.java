@@ -12,8 +12,8 @@ public class Test_Interpolation {
 
     private static void testNewton() {
 
-        double[] x = { -1, 1, 3};
-        double[] y = { -3, 1, -3};
+        double[] x = { -1, 1, 3,4};
+        double[] y = { -3, 1, -3,-4};
         NewtonPolynom p = new NewtonPolynom(x, y);
 
         System.out.println(p.evaluate(0) + " sollte sein: 0.0");

@@ -95,7 +95,7 @@ public class NewtonPolynom implements InterpolationMethod {
 
         int n = y.length - 1;                           //////IDK GDFGDZZDTTDETDTEE
         int spalte = 1;
-        while(n != 1){
+        while(n != 0){
             for(int i = 0;i<n;i++){
                 f[i] = (f[i+1] - f[i])/(x[spalte+i] - x[i]); ///Ich glaube so komm ich auf den diagonalenspaltenwert
                 }
